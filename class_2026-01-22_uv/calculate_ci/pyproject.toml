@@ -1,0 +1,8 @@
+[project]
+name = "calculate-ci"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.4.1",
+    "scipy>=1.17.0",
+]
