@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_is_fitted, validate_data
 
-class interact_features(BaseEstimator, TransformerMixin):
+class interact_features(TransformerMixin, BaseEstimator):
   def __init__(self, interaction_only = False, include_intercept = False):
     self.interaction_only = interaction_only
     self.include_intercept = include_intercept
