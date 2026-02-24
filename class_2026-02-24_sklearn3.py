@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_is_fitted, validate_data
 
-class interact_features(TransformerMixin, BaseEstimator):
+class interact_features(BaseEstimator, TransformerMixin):
   def __init__(self, interaction_only = False, include_intercept = False):
     self.interaction_only = interaction_only
     self.include_intercept = include_intercept
@@ -68,3 +68,24 @@ class interact_features(TransformerMixin, BaseEstimator):
 X = pd.DataFrame({"x1": range(1,6), "x2": range(5, 0, -1)})
 Y = pd.DataFrame({"x1": range(1,6)})
 Z = np.array(X)
+
+X
+
+itf = interact_features().fit(X)
+itf.transform(X)
+itf.get_feature_names_out()
+itf.feature_names_in_
+
+
+
+itf2 = interact_features().fit(Z)
+itf2.transform(Z)
+itf2.get_feature_names_out()
+itf2.feature_names_in_
+
+
+interact_features().fit(Y)
+
+from sklearn.utils.estimator_checks import check_estimator
+check_estimator(interact_features())
+
